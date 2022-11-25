@@ -3,12 +3,13 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="mt-4 footer footer-center p-10 bg-orange-300 text-black">
+        <footer className=" rounded  mt-4 footer footer-center p-10 bg-orange-300 text-black">
             <div>
                 
                 <p className="font-bold">
                 TV-BazarBD <br/>Providing best deals on used TV since 2008
                 </p> 
+                <p>Call us: +8801711-222333</p>
                 <p>Copyright © 2022 - All right reserved</p>
             </div> 
             <div>

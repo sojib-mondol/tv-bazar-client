@@ -6,7 +6,7 @@ import img3 from '../../../assets/categories/3.jpg'
 const ProductCategories = () => {
 
     return (
-        <div className='mt-4'>
+        <div className='my-20'>
             <div className='text-center'>
                 <h2 className='text-3xl font-bold text-orange-600'>Our Categories</h2>
             </div>
