@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-const TvCard = ({tv}) => {
+const TvCard = ({tv, setProduct}) => {
     const {img, resale_price, original_price, title, location, years_of_use, posted_time, sellers_name, _id} = tv;
     return (
         <div className="card card-compact  shadow-xl">
@@ -17,9 +16,11 @@ const TvCard = ({tv}) => {
 
                 
                 <div className="card-actions justify-end">
-                    <Link to={`/details/${_id}`}>
-                        <button className="btn btn-primary">Book now</button>
-                    </Link>
+                    <label
+                        htmlFor="booking-modal"
+                        className="btn btn-primary text-white"
+                        onClick={() => setProduct(tv)}
+                    >Book Now</label>
                 </div>
             </div>
         </div>
