@@ -3,11 +3,11 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="mt-4 footer footer-center p-10 bg-green-300 text-black">
+        <footer className="mt-4 footer footer-center p-10 bg-orange-300 text-black">
             <div>
                 
                 <p className="font-bold">
-                TV-BazarBD <br/>Providing reliable value to your used TV since 1992
+                TV-BazarBD <br/>Providing best deals on used TV since 2008
                 </p> 
                 <p>Copyright © 2022 - All right reserved</p>
             </div> 
