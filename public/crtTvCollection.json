@@ -1,0 +1,38 @@
+[
+    {
+        
+        "service_id": "01",
+        "title": "SONY 14'inch",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoVySUAfsqE6eBtC_5Kei9kaZjStQLQlbq6Q&usqp=CAU",
+        "resale_price": "10000.00",
+        "original_price": "16000.00",
+        "location": "Dhaka",
+        "years_of_use": "5",
+        "posted_time": "5:00 pm",
+        "sellers_name": "Mofijul"
+    },
+    {
+        
+        "service_id": "02",
+        "title": "LG 21'inch",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV0iK0J4F9SYJfSfSk2zwC4udKjjUsCOZtzQ&usqp=CAU",
+        "resale_price": "8000.00",
+        "original_price": "18000.00",
+        "location": "Chattogram",
+        "years_of_use": "7",
+        "posted_time": "1:00 pm",
+        "sellers_name": "Rajib Chodhury"
+    },
+    {
+        
+        "service_id": "03",
+        "title": "Samsung 21'inch",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjKgVDg-f8yhCR5YlHVtmfgn9O9HHnTOguag&usqp=CAU",
+        "resale_price": "10000.00",
+        "original_price": "16000.00",
+        "location": "Cumilla",
+        "years_of_use": "4",
+        "posted_time": "8:00 pm",
+        "sellers_name": "Rokeya Begum"
+    }
+]

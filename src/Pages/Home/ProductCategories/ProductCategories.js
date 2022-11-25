@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import img1 from '../../../assets/categories/1.jpg'
 import img2 from '../../../assets/categories/2.jpg'
 import img3 from '../../../assets/categories/3.jpg'
@@ -17,7 +18,7 @@ const ProductCategories = () => {
                     <h2 className="card-title">CRT TV</h2>
                     <p>Looking for sell or buy a CRT TV. This is the best place for best deal.</p>
                     <div className="card-actions justify-end">
-                    <button className="btn btn-secondary">See Deals</button>
+                    <Link to='/crt' className="btn btn-secondary">See Deals</Link>
                     </div>
                 </div>
             </div>
@@ -27,7 +28,7 @@ const ProductCategories = () => {
                     <h2 className="card-title">LED TV</h2>
                     <p>Need some crazy exeprience with SMART TV. Sell you old LED TV with best price and buy a SMART TV for you home.</p>
                     <div className="card-actions justify-end">
-                    <button className="btn btn-secondary">See Deals</button>
+                    <Link to='/led' className="btn btn-secondary">See Deals</Link>
                     </div>
                 </div>
             </div>
@@ -37,7 +38,7 @@ const ProductCategories = () => {
                     <h2 className="card-title">SMART TV</h2>
                     <p>Are you looking for best deal on SMART TV. This is bet most populer and relaiable place to buy or sell SMSRT TV</p>
                     <div className="card-actions justify-end">
-                    <button className="btn btn-secondary">See Deals</button>
+                    <Link to='/smart' className="btn btn-secondary">See Deals</Link>
                     </div>
                 </div>
             </div>
