@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import BookingModal from '../../../Booking/BookingModal/BookingModal';
 import TvCard from '../Crt/TvCard';
 
 const Led = () => {
 
     const [tvs, settvs] = useState([]);
+    const [product, setProduct] = useState(null);
+
     useEffect(() => {
         fetch('http://localhost:5000/ledTvCollection')
         .then(res => res.json())
@@ -24,10 +27,18 @@ const Led = () => {
                         tvs.map(tv => <TvCard
                             key={tv._id}
                             tv={tv}
+                            setProduct={setProduct}
                         ></TvCard>)
                     }
                 </div>
             </div>
+            {
+                product &&
+                <BookingModal
+                    product={product}
+                    setProduct={setProduct}
+                ></BookingModal>
+            }
         </div>
     );
 };
