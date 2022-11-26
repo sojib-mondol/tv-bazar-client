@@ -15,7 +15,7 @@ const SignUp = () => {
         console.log(data);
         setSignUPError('');
 
-    createUser(data.email, data.password)
+    createUser(data.email, data.password, data.role)
             .then(result => {
                 const user = result.user;
                 console.log(user);
@@ -25,7 +25,7 @@ const SignUp = () => {
                 }
                 updateUser(userInfo)
                     .then(() => { 
-                        saveUser(data.name, data.email);
+                        saveUser(data.name, data.email, data.role);
                     })
                     .catch(err => console.log(err));
             })
@@ -46,8 +46,8 @@ const SignUp = () => {
         .catch(error => console.error(error));
     }
 
-    const saveUser = (name, email) =>{
-        const user ={name, email};
+    const saveUser = (name, email, role) =>{
+        const user ={name, email, role};
         fetch('http://localhost:5000/users', {
             method: 'POST',
             headers: {
@@ -73,6 +73,15 @@ const SignUp = () => {
                             required: "Name is Required"
                         })} className="input input-bordered w-full max-w-xs" />
                         {errors.name && <p className='text-red-500'>{errors.name.message}</p>}
+                    </div>
+                    
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label"> <span className="label-text">Please select your Role</span></label>
+                        <select {...register("role")} className="input input-bordered w-full max-w-xs">
+                            <option value="buyers">Buyers</option>
+                            <option value="sellers">Sellers</option>
+                            <option value="admin">Admin </option>
+                        </select>
                     </div>
                     <div className="form-control w-full max-w-xs">
                         <label className="label"> <span className="label-text">Email</span></label>
