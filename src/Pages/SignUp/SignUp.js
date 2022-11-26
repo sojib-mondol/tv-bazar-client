@@ -19,7 +19,7 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                toast('User Created Successfully.')
+                toast.success('User Created Successfully.')
                 const userInfo = {
                     displayName: data.name
                 }
@@ -41,6 +41,7 @@ const SignUp = () => {
         .then(result => {
             const user = result.user;
             console.log(user);
+            saveUser(user.displayName, user.email, "buyers");
             toast.success('Successfully logged in');
         })
         .catch(error => console.error(error));
@@ -57,7 +58,7 @@ const SignUp = () => {
         })
         .then(res => res.json())
         .then(data =>{
-            console.log("save user", data);
+            //console.log("save user", data);
             navigate('/');
         })
     }
