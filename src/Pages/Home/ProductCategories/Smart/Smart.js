@@ -1,16 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import React, { useState } from 'react';
 import BookingModal from '../../../Booking/BookingModal/BookingModal';
+import Loading from '../../../Shared/Loading/Loading';
 import TvCard from '../Crt/TvCard';
 
 const Smart = () => {
-    const [tvs, settvs] = useState([]);
     const [product, setProduct] = useState(null);
 
-    useEffect(() => {
-        fetch('http://localhost:5000/smartTvCollection')
-        .then(res => res.json())
-        .then(data => settvs(data))
-    }, [])
+    const {data: tvs = [], isLoading} = useQuery({
+        queryKey: ['tvs'],
+        queryFn: async() => {
+            const res = await fetch('http://localhost:5000/smartTvCollection')
+            const data = await res.json();
+            return data;
+        }
+    });
+    if(isLoading){
+        return <Loading></Loading>
+    }
+
     return (
         <div>
             <div className='text-center mb-4'>

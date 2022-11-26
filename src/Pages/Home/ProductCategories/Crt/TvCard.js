@@ -1,7 +1,7 @@
 import React from 'react';
 
 const TvCard = ({tv, setProduct}) => {
-    const {img, resale_price, original_price, title, location, years_of_use, posted_time, sellers_name, _id} = tv;
+    const {img, resale_price, original_price, title, location, years_of_use, posted_time, sellers_name} = tv;
     return (
         <div className="card card-compact  shadow-xl">
             <figure><img src={img} style={{height: '300px'}} alt="Shoes" /></figure>
