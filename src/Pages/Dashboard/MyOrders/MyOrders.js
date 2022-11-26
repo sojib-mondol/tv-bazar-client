@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../contexts/AuthProvider';
+import Loading from '../../Shared/Loading/Loading';
 
 const MyOrders = () => {
     
@@ -8,7 +9,7 @@ const MyOrders = () => {
 
     const url = `http://localhost:5000/booking?email=${user?.email}`;
 
-    const { data: bookings = [] } = useQuery({
+    const { data: bookings = [], isLoading } = useQuery({
         queryKey: ['bookings', user?.email],
         queryFn: async () => {
             const res = await fetch(url, {
@@ -19,7 +20,10 @@ const MyOrders = () => {
             const data = await res.json();
             return data;
         }
-    })
+    });
+    if(isLoading){
+        return <Loading></Loading>
+    }
     return (
         <div>
             <h3 className="text-3xl mb-5">My Orders</h3>
