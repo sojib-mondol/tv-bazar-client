@@ -11,7 +11,7 @@ const ProductCategories = () => {
             <div className='text-center'>
                 <h2 className='text-3xl font-bold text-orange-600'>Our Categories</h2>
             </div>
-            <div class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="card   shadow-xl">
                 <figure><img src={img1} alt="crt tv img" /></figure>
                 <div className="card-body">

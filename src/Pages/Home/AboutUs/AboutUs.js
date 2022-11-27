@@ -4,9 +4,9 @@ import person from '../../../assets/person/1.jpg'
 const AboutUs = () => {
     return (
         <div className="hero my-20">
-            <div className="hero-content flex-col lg:flex-row">
+            <div className="hero-content flex-col  lg:flex-row">
                 <div className='relative w-1/2'>
-                    <img src={person} alt='' className="w-4/5 h-full rounded-lg shadow-2xl" />
+                    <img src={person} alt='person img' className="sm:w-full md:w-full lg:w-4/5 h-full rounded-lg shadow-2xl" />
                 </div>
                 <div className='w-1/2'>
                     <p className=" text-2xl font-bold text-orange-600">About Us</p>
