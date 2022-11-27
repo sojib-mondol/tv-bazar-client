@@ -116,16 +116,16 @@ const MyProducts = () => {
                     </table>
                 </div>
                 {
-                deleting && <ConfirmationModal
-                    title={` Are you sure you want to delete?`}
-                    message={`If you delete ${deleting.title}. It cannot be undone.`}
-                    successAction = {handleDelete}
-                    successButtonName="Delete"
-                    modalData = {deleting}
-                    closeModal = {closeModal}
-                >
-                </ConfirmationModal>
-            }
+                    deleting && <ConfirmationModal
+                        title={` Are you sure you want to delete?`}
+                        message={`If you delete ${deleting.title}. It cannot be undone.`}
+                        successAction = {handleDelete}
+                        successButtonName="Delete"
+                        modalData = {deleting}
+                        closeModal = {closeModal}
+                    >
+                    </ConfirmationModal>
+                }
             </div>
         </div>
     );
