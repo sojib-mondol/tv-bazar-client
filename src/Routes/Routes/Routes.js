@@ -5,6 +5,7 @@ import Blog from "../../Pages/Blog/Blog";
 import AddProduct from "../../Pages/Dashboard/AddProduct/AddProduct";
 import AllBuyers from "../../Pages/Dashboard/AllBuyers/AllBuyers";
 import AllSelers from "../../Pages/Dashboard/AllSelers/AllSelers";
+import Payment from "../../Pages/Dashboard/Dashboard/Payment/Payment";
 import MyOrders from "../../Pages/Dashboard/MyOrders/MyOrders";
 import MyProduct from "../../Pages/Dashboard/MyProduct/MyProduct";
 import ReportedItems from "../../Pages/Dashboard/ReportedItems/ReportedItems";
@@ -15,6 +16,7 @@ import ProductCategories from "../../Pages/Home/ProductCategories/ProductCategor
 import Smart from "../../Pages/Home/ProductCategories/Smart/Smart";
 import Login from "../../Pages/Login/Login";
 import PageNotFound from "../../Pages/PageNotFound/PageNotFound";
+import DisplayError from "../../Pages/Shared/DisplayError/DisplayError";
 import SignUp from "../../Pages/SignUp/SignUp";
 import AdminRoute from "../AdminRoute/AdminRoute";
 import BuyersRoute from "../BuyersRoute/BuyersRoute";
@@ -25,6 +27,7 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
+        errorElement: <DisplayError></DisplayError>,
         children: [
             {
                 path: '/',
@@ -67,6 +70,7 @@ const router = createBrowserRouter([
     {
         path: '/dashboard',
         element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
+        errorElement: <DisplayError></DisplayError>,
         children: [
             {
                 path: '/dashboard/myorders',
@@ -91,6 +95,11 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/addproduct',
                 element: <SellersRoute><AddProduct></AddProduct></SellersRoute>
+            },
+            {
+                path: '/dashboard/payment/:id',
+                element: <BuyersRoute><Payment></Payment></BuyersRoute>,
+                loader: ({params}) => fetch(`http://localhost:5000/bookings/${params.id}`)
             },
         ]
     }
