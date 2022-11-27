@@ -5,7 +5,7 @@ import ItemsCard from './ItemsCard';
 const AdvertisedItems = () => {
     const [product, setProduct] = useState(null);
 
-    const { data: addedProducts, isLoading, refetch } = useQuery({
+    const { data: addedProducts } = useQuery({
         queryKey: ['addedProducts'],
         queryFn: async () => {
             const res = await fetch('http://localhost:5000/advertisement')

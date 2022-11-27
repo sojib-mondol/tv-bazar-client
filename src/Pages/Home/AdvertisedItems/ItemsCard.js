@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ItemsCard = ({pdt, setProduct}) => {
-    const {category, condition, contact, img, location, original_rice, published_date, resale_price, seller_name, title, used_years, _id } = pdt;
+    const {category, contact, img, location, original_rice, published_date, resale_price, title, used_years } = pdt;
 
     
     return (

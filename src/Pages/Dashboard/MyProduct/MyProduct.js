@@ -1,9 +1,16 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import ConfirmationModal from '../../Shared/ConfirmationModal/ConfirmationModal';
+import Loading from '../../Shared/Loading/Loading';
 
 const MyProducts = () => {
+    const [deleting, setDeleting] = useState(null);
+    const closeModal = () => {
+        setDeleting(null);
+    }
+
     const navigate = useNavigate();
     const { data: addedProducts, isLoading, refetch } = useQuery({
         queryKey: ['addedProducts'],
@@ -13,16 +20,34 @@ const MyProducts = () => {
             return data;
         }
     })
+
+    // for delete
+    const handleDelete = addedProduct => {
+        fetch(`http://localhost:5000/addedProducts/${addedProduct._id}`, {
+            method: 'DELETE', 
+            headers: {
+                //authorization: `bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.deletedCount > 0){
+                refetch();
+                toast.success(`${addedProduct.title} deleted successfully`)
+            }
+        })
+    }
+
+    if (isLoading) {
+        return <Loading></Loading>
+    }
     
     // for product advertisement
     const forAdvertise = productForAdvertise =>{
-        // console.log(productForAdvertise)
-        
         fetch('http://localhost:5000/advertisement', {
                 method: 'POST',
                 headers: {
                     'content-type' : 'application/json',
-                    // authorization: `bearer ${localStorage.getItem('accessToken')}`
                 },
                 body: JSON.stringify(productForAdvertise)
             })
@@ -33,24 +58,7 @@ const MyProducts = () => {
                 navigate('/')
             })
     }
-    // added product deleting action here
-    const deletingAction = id =>{
-        
-        fetch(`http://localhost:5000/addedProducts/${id}`,{
-            method: 'DELETE',
-            headers: {
-                // authorization: `bearer ${localStorage.getItem('accessToken')}`
-            }
-        })
-        .then(res => res.json())
-        .then(data =>{
-            console.log(data)
-            if(data.deletedCount > 0){
-                refetch()
-                toast.success(`added product deleted successfully`)
-            }
-        })
-    }
+    
     return (
         <div>
             
@@ -97,7 +105,7 @@ const MyProducts = () => {
                                 </td>
                                 <td>
                                     <button onClick={()=>forAdvertise(addedProduct)} className='btn btn-sm btn-info mr-3'>Click for Ad</button>
-                                    <button onClick={()=>deletingAction(addedProduct._id)} className='btn btn-sm btn-warning'>Delete</button>
+                                    <label onClick={() => setDeleting(addedProduct)} htmlFor="confirmation-modal" className="btn btn-sm btn-error">Delete</label>
                                 </td>
                             </tr>
                             )}
@@ -107,6 +115,17 @@ const MyProducts = () => {
                         </tbody>
                     </table>
                 </div>
+                {
+                deleting && <ConfirmationModal
+                    title={` Are you sure you want to delete?`}
+                    message={`If you delete ${deleting.title}. It cannot be undone.`}
+                    successAction = {handleDelete}
+                    successButtonName="Delete"
+                    modalData = {deleting}
+                    closeModal = {closeModal}
+                >
+                </ConfirmationModal>
+            }
             </div>
         </div>
     );
