@@ -21,6 +21,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                toast.success('Successfully logged in');
                 navigate(from, {replace: true});
             })
             .catch(error => {
@@ -37,6 +38,7 @@ const Login = () => {
             console.log(user);
             saveUser(user.displayName, user.email, "buyers");
             toast.success('Successfully logged in');
+            navigate(from, { replace: true });
         })
         .catch(error => console.error(error));
     }
