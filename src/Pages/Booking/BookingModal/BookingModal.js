@@ -26,7 +26,7 @@ const BookingModal = ({product, setProduct}) => {
             img
         }
 
-        fetch('http://localhost:5000/booking', {
+        fetch('https://tv-bazarbd-server.vercel.app/booking', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'

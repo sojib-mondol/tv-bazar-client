@@ -10,7 +10,7 @@ const Smart = () => {
     const {data: tvs = [], isLoading} = useQuery({
         queryKey: ['tvs'],
         queryFn: async() => {
-            const res = await fetch('http://localhost:5000/smartTvCollection')
+            const res = await fetch('https://tv-bazarbd-server.vercel.app/smartTvCollection')
             const data = await res.json();
             return data;
         }

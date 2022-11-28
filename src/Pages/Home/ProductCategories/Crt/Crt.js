@@ -11,7 +11,7 @@ const Crt = () => {
     const {data: tvs = [], isLoading} = useQuery({
         queryKey: ['tvs'],
         queryFn: async() => {
-            const res = await fetch('http://localhost:5000/crtTvCollection')
+            const res = await fetch('https://tv-bazarbd-server.vercel.app/crtTvCollection')
             const data = await res.json();
             return data;
         }
