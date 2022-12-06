@@ -6,7 +6,7 @@ import { AuthContext } from '../../contexts/AuthProvider';
 
 const SignUp = () => {
    
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm(); // ract hook from 
     const { createUser, updateUser, googleSignIn } = useContext(AuthContext);
     const [signUpError, setSignUPError] = useState('')
     const location = useLocation();

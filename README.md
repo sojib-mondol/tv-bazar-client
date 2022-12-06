@@ -5,3 +5,5 @@ Hi, This is a Used product(TV) reselling website. Where we can buy & sell used T
 4. For Athuntication I used Google firebase auth. And 3 types of login system 1.buyers, 2. sellers, 3. Admin
 5. This web site is full Resposive & User friendly.
 My live website link: https://tv-bazarbd.web.app/
+adminEmail: ak@gmail.com
+adminPassword: 123456A@
