@@ -1,43 +1,24 @@
 import React from 'react';
-import img1 from '../../../assets/banner-img/1.jpg';
-import img2 from '../../../assets/banner-img/2.jpg';
+
 import img3 from '../../../assets/banner-img/3.jpg';
-import BannerItem from './BannerItem';
+import './Banner.css';
 
-
-const bannerData = [
-    {
-        image: img1,
-        prev: 3,
-        id: 1,
-        next: 2
-    },
-    {
-        image: img2,
-        prev: 1,
-        id: 2,
-        next: 3
-    },
-    {
-        image: img3,
-        prev: 2,
-        id: 3,
-        next: 1
-    }
-]
 
 
 const Banner = () => {
     return (
-        <div className="carousel w-full my-12">
-            
-            {
-                bannerData.map(slide => <BannerItem
-                    key={slide.id}
-                    slide={slide}
-                ></BannerItem>)
-            }
-            
+        <div className=''>
+            <div className="hero min-h-screen " style={{ backgroundImage: `url(${img3})`}}>
+            <div className="hero-overlay bg-opacity-50 "></div>
+            <div className=" text-left  text-orange-300 place-self-start mt-48 ml-6 ">
+                <div className=" ">
+                <h1 className="mb-5 top-1/2 text-5xl font-bold ">Buy and Sell your  TV with <br /> Best Price! </h1>
+                <p className="mb-5">Buy and sell your used tv, with best best price. Find a great deal<br/>               
+                close to you, or search all of Bangladesh.</p>
+               
+                </div>
+            </div>
+            </div>
         </div>
     );
 };

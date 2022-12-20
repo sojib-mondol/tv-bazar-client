@@ -15,7 +15,7 @@ const BannerItem = ({slide}) => {
                     Best Price 
                 </h1>
             </div>
-            <div className="absolute flex justify-end transform -translate-y-1/2 left-24 w-3/5 top-1/2">
+            <div className="absolute flex  transform -translate-y-1/2 left-24 w-3/5 top-1/2">
                 <p className='text-white hidden md:block lg:block lg:text-xl'>Buy and sell your used tv, with best best price. Find a great deal close to you, or search all of Bangladesh.</p>
             </div>
 
