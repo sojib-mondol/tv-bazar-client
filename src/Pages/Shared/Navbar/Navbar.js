@@ -20,7 +20,8 @@ const Navbar = () => {
                 <li><Link className='btn btn-ghost text-black border-none rounded' to="/dashboard">Dashboard</Link></li>
                 <li><button className='btn btn-ghost text-black border-none rounded' onClick={handleLogOut}>Sign out</button></li>
             </>
-            : <li><Link className='btn btn-ghost text-black border-none rounded' to="/login">Login</Link></li>}
+            : <li><Link className='btn btn-ghost text-black border-none rounded' to="/login">Login</Link></li>
+        }
     </React.Fragment>
 
     return (

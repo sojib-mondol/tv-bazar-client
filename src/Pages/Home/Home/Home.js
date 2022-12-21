@@ -6,7 +6,7 @@ import ProductCategories from '../ProductCategories/ProductCategories';
 
 const Home = () => {
     return (
-        <div>
+        <div className=''>
             <Banner></Banner>
             <AdvertisedItems></AdvertisedItems>
             <ProductCategories></ProductCategories>
