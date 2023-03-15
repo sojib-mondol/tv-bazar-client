@@ -1,4 +1,5 @@
 import React from 'react';
+import EarnMoney from '../../../components/earnMoney/EarnMoney';
 import SpicialOffer from '../../../components/SpicialOffer/SpicialOffer';
 import AboutUs from '../AboutUs/AboutUs';
 import AdvertisedItems from '../AdvertisedItems/AdvertisedItems';
@@ -13,6 +14,7 @@ const Home = () => {
             <ProductCategories></ProductCategories>
             <AboutUs></AboutUs>
             <SpicialOffer></SpicialOffer>
+            <EarnMoney></EarnMoney>
         </div>
     );
 };
