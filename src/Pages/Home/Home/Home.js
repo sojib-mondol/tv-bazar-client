@@ -1,4 +1,5 @@
 import React from 'react';
+import SpicialOffer from '../../../components/SpicialOffer/SpicialOffer';
 import AboutUs from '../AboutUs/AboutUs';
 import AdvertisedItems from '../AdvertisedItems/AdvertisedItems';
 import Banner from '../Banner/Banner';
@@ -11,6 +12,7 @@ const Home = () => {
             <AdvertisedItems></AdvertisedItems>
             <ProductCategories></ProductCategories>
             <AboutUs></AboutUs>
+            <SpicialOffer></SpicialOffer>
         </div>
     );
 };

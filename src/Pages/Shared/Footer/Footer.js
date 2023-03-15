@@ -3,7 +3,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className=" rounded  mt-4 footer footer-center p-10 bg-orange-300 text-black">
+        <footer className=" rounded  mt-20 footer footer-center p-10 bg-orange-300 text-black">
             <div>
                 
                 <p className="font-bold">
